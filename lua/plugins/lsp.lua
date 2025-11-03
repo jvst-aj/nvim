@@ -1,0 +1,22 @@
+return {
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      tsserver = {},
+      tailwindcss = {
+        settings = {
+          tailwindCSS = {
+            experimental = {
+              classRegex = {
+                { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+                { "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                { "([a-zA-Z0-9\\-:]+)" },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+}

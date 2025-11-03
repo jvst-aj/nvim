@@ -1,0 +1,249 @@
+{
+  "Console Log": {
+    "prefix": "log",
+    "body": "console.log($0)",
+    "description": "Log to console"
+  },
+  "Console Error": {
+    "prefix": "loge",
+    "body": "console.error($0)",
+    "description": "Log error to console"
+  },
+  "Console Warning": {
+    "prefix": "logw",
+    "body": "console.warn($0)",
+    "description": "Log warning to console"
+  },
+  "Console Information": {
+    "prefix": "logi",
+    "body": "console.info($0)",
+    "description": "Log information to console"
+  },
+  "Console Assert": {
+    "prefix": "loga",
+    "body": "console.assert($0)",
+    "description": "Assert to console"
+  },
+  "Console Clear": {
+    "prefix": "logc",
+    "body": [
+      "console.clear()",
+      "$0"
+    ],
+    "description": "Clear console"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for(let index = 0; index < ${2:limit}; index++){\n",
+      "\t$0",
+      "\n}"
+    ],
+    "description": "Insert for loop"
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:value}){",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\tbreak",
+      "\tdefault :",
+      "\t\tbreak",
+      "}"
+    ],
+    "description": "Insert case for switch statement"
+  },
+  "Case Statement": {
+    "prefix": "case",
+    "body": [
+      "case ${1:value}:",
+      "\t$0",
+      "\tbreak"
+    ],
+    "description": "Insert case for switch statement"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if(${1:condition}){",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Else-If Statement": {
+    "prefix": "elif",
+    "body": [
+      "else if(${1:condition}){",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Else Statement": {
+    "prefix": "else",
+    "body": [
+      "else{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Ternary Operator": {
+    "prefix": "ternary",
+    "body": "${1:condition} ? ${2:valueA} : ${0:valueB}",
+    "description": "Insert Ternary Operator"
+  },
+  "Try Catch Block": {
+    "prefix": "trycatch",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (error) {",
+      "\t",
+      "}"
+    ],
+    "description": "Insert a try-catch block"
+  },
+  "Function": {
+    "prefix": "function",
+    "body": [
+      "const ${1:foo} = (${2:params}) => {",
+      "\t$0",
+      "\treturn",
+      "}"
+    ]
+  },
+  "Async Function": {
+    "prefix": "functionAsync",
+    "body": [
+      "const ${1:foo} = async (${2:params}) => {",
+      "\t$0",
+      "\treturn",
+      "}"
+    ]
+  },
+  "Lamda": {
+    "prefix": "lamda",
+    "body": [
+      "(${1:params}) => $0"
+    ]
+  },
+  "Async Lamda": {
+    "prefix": "lamdaAsync",
+    "body": [
+      "async (${1:params}) => $0"
+    ]
+  },
+  "Node Import": {
+    "prefix": "req",
+    "body": "const ${1:objectName} = require('${2:moduleName}')$0"
+  },
+  "ECMAScript Import": {
+    "prefix": "imp",
+    "body": "import {${2:objectName}} from '${1:moduleName}'$0"
+  },
+  "React 19 Component": {
+    "prefix": "comp",
+    "body": [
+      "export function ${1:ComponentName}({",
+      "\tclassName,",
+      "\tchildren,",
+      "\t...props",
+      "}: React.ComponentProps<\"${2:div}\">) {",
+      "\treturn (",
+      "\t\t<${2:div} className={cn(\"\", className)} {...props}>",
+      "\t\t\t{children}",
+      "\t\t</${2:div}>",
+      "\t)",
+      "}"
+    ]
+  },
+  "Initial Component React 18": {
+    "prefix": "initcomp18",
+    "body": [
+      "import * as React from \"react\"",
+      "import { Slot } from \"@radix-ui/react-slot\"",
+      "import { cva, type VariantProps } from \"class-variance-authority\"",
+      "import { cn } from \"@/core/utils\"",
+      "",
+      "const ${1:ComponentName}Variants = cva(\"\", {",
+      "\tvariants: {",
+      "\t\tvariant: {",
+      "\t\t\tdefault: \"\",",
+      "\t\t},",
+      "\t\tsize: {",
+      "\t\t\tdefault: \"\",",
+      "\t\t},",
+      "\t},",
+      "\tdefaultVariants: {",
+      "\t\tvariant: \"default\",",
+      "\t\tsize: \"default\",",
+      "\t}",
+      "})",
+      "",
+      "export type ${1:ComponentName}Props = React.ComponentProps<\"${2:div}\"> &",
+      "  VariantProps<typeof ${1:ComponentName}Variants> & {",
+      "    asChild?: boolean",
+      "  }",
+      "",
+      "export function ${1:ComponentName}(props: ${1:ComponentName}Props) {",
+      "  const Comp = props.asChild ? Slot : \"${2:div}\"",
+      "",
+      "  return (",
+      "    <Comp",
+      "      {...props}",
+      "      className={cn(${1:ComponentName}Variants({",
+      "        variant: props.variant,",
+      "        size: props.size,",
+      "        className: props.className,",
+      "      }))}",
+      "    />",
+      "  )",
+      "}"
+    ]
+  },
+  "Component React 18": {
+    "prefix": "comp18",
+    "body": [
+      "const ${1:ComponentName}Variants = cva(\"\", {",
+      "\tvariants: {",
+      "\t\tvariant: {",
+      "\t\t\tdefault: \"\",",
+      "\t\t},",
+      "\t\tsize: {",
+      "\t\t\tdefault: \"\",",
+      "\t\t},",
+      "\t},",
+      "\tdefaultVariants: {",
+      "\t\tvariant: \"default\",",
+      "\t\tsize: \"default\",",
+      "\t}",
+      "})",
+      "",
+      "export type ${1:ComponentName}Props = React.ComponentProps<\"${2:div}\"> &",
+      "  VariantProps<typeof ${1:ComponentName}Variants> & {",
+      "    asChild?: boolean",
+      "  }",
+      "",
+      "export function ${1:ComponentName}(props: ${1:ComponentName}Props) {",
+      "  const Comp = props.asChild ? Slot : \"${2:div}\"",
+      "",
+      "  return (",
+      "    <Comp",
+      "      {...props}",
+      "      className={cn(${1:ComponentName}Variants({",
+      "        variant: props.variant,",
+      "        size: props.size,",
+      "        className: props.className,",
+      "      }))}",
+      "    />",
+      "  )",
+      "}"
+    ]
+  },
+  "useState": {
+    "prefix": "useState",
+    "body": [
+      "const [${1:state}, set${2:set}] = useState<${3:T}>(${0:initialValue})"
+    ]
+  }
+}
