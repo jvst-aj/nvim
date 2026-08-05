@@ -95,3 +95,6 @@ vim.opt.undofile = true
 
 -- Swap
 vim.o.swapfile = false
+
+-- Unhide Markdown code block language markers.
+vim.opt.conceallevel = 0
