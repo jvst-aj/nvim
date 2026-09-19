@@ -112,6 +112,16 @@ map("n", "<Leader>q", ":q!<CR>")
 -- Redo
 map("n", "U", "<C-r>")
 
+-- Copy absolute file path
+map("n", "<Leader>ya", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { desc = "Copy absolute file path" })
+
+-- Copy relative file path
+map("n", "<Leader>yr", function()
+  vim.fn.setreg("+", vim.fn.expand("%"))
+end, { desc = "Copy relative file path" })
+
 -- NOTE: SEARCHING & REFACTORING
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
