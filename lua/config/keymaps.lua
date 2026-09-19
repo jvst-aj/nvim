@@ -119,7 +119,8 @@ end, { desc = "Copy absolute file path" })
 
 -- Copy relative file path
 map("n", "<Leader>yr", function()
-  vim.fn.setreg("+", vim.fn.expand("%"))
+  local path = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":.")
+  vim.fn.setreg("+", path)
 end, { desc = "Copy relative file path" })
 
 -- NOTE: SEARCHING & REFACTORING
