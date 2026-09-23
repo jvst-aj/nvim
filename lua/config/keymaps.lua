@@ -174,3 +174,29 @@ map("n", "<leader>et", explorer.toggle_hidden)
 
 -- NOTE: OUTLINE
 map("n", "<leader>ol", "<cmd>topleft Outline<CR>")
+
+-- NOTE: DIFF
+
+-- Open working tree changes against the latest commit
+map("n", "<Leader>do", "<cmd>DiffviewOpen HEAD<CR>", { desc = "Open diff view" })
+
+-- Close diff view
+map("n", "<Leader>dc", "<cmd>DiffviewClose<CR>", { desc = "Close diff view" })
+
+-- Focus file panel
+map("n", "<Leader>df", "<cmd>DiffviewFocusFiles<CR>", { desc = "Focus diff files" })
+
+-- Toggle file panel
+map("n", "<Leader>dt", "<cmd>DiffviewToggleFiles<CR>", { desc = "Toggle diff files" })
+
+-- Refresh diff view
+map("n", "<Leader>dr", "<cmd>DiffviewRefresh<CR>", { desc = "Refresh diff view" })
+
+-- Show history for the current file
+map("n", "<Leader>dh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Current file history" })
+
+-- Show changes for the current file
+map("n", "<Leader>dd", "<cmd>DiffviewOpen HEAD -- %<CR>", { desc = "Diff current file" })
+
+-- Show history for the repository
+map("n", "<Leader>dH", "<cmd>DiffviewFileHistory<CR>", { desc = "Repository history" })
