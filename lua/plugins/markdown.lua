@@ -7,6 +7,7 @@ return {
       code = {
         conceal_delimiters = true,
         disable_background = true,
+        highlight_border = false,
       },
     })
 
