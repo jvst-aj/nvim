@@ -4,6 +4,9 @@
 
 -- NOTE: GLOBAL
 
+-- Typescript
+vim.g.lazyvim_ts_lsp = "tsgo"
+
 -- Decrease update time
 vim.opt.updatetime = 250
 
